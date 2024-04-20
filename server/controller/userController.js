@@ -8,7 +8,7 @@ export const create = async(req,res)=>{
             return res.status(404).json({message: "User data not found"})
         }
         const savedData = await userData.save()
-        res.status(200).json(savedData);
+        res.status(200).json({msg: 'User created Successfully',savedData});
     } catch (error) {
         res.status(500).json({
             message: 'Data not saved in database',
@@ -27,7 +27,7 @@ export const getAll = async(req, res)=>{
             message: 'users data not find'
         })
     }
-    res.status(200).json({ userData })
+    res.status(200).json({msg:"User created Successfully" ,userData })
    } catch (error) {
         res.status(500).json({
             message: 'users data not found in database',
@@ -63,7 +63,7 @@ export const update = async(req, res)=>{
            return res.status(401).json({message: 'user updata data not found.'})
         }
         const updataData = await User.findByIdAndUpdate(id,req.body,{new: true});
-        res.status(200).json(updataData);
+        res.status(200).json({msg: 'user update successfully',updataData});
     } catch (error) {
         res.status(500).json({
             message: "data not updata",

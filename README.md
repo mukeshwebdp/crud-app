@@ -22,7 +22,7 @@
 ```
   ./client
   npm i
-  npm run dev
+  npm run start
 ```
 ## Project Structure
 ### Backend (`crud-react-backend`)
